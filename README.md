@@ -1,3 +1,5 @@
+![](images/horizontal.svg)
+
 gitlist-docker
 ==============
 
@@ -26,13 +28,13 @@ Usage
 
 You can build the image like this
 
-    git clone <this repo>
+    git clone https://github.com/aklambeth/gitlist-docker.git
     cd gitlist-docker
-    docker build --rm=true -t gitlist-lsio .
+    docker build --rm=true -t gitlist .
 
 And run it like this
 
-    docker run --rm=true -p 8888:80 -v /path/repo:/repos gitlist-lsio -e PUID=<user id> -e PGID=<group id>
+    docker run --rm=true -p 8888:80 -v /path/repo:/repos gitlist -e PUID=<user id> -e PGID=<group id>
 
 The web interface will be available on host machine at port 8888 and will show
 repositories inside /path/repo
@@ -42,7 +44,7 @@ Or, if you use docker-compose
     version: "3"
     services:
         gitlist:
-        image: gitlist-lsio
+        image: gitlist
         container_name: gitlist
         environment:
             - PUID=<user id>
