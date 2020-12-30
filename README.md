@@ -14,7 +14,12 @@ gitlist-docker-lsio
 
 This image is based off the linuxservers.io [ubuntu base image](https://hub.docker.com/r/lsiobase/ubuntu/).
 
-A host user can be mapped to the container's www server process via [environment variables](https://docs.linuxserver.io/general/understanding-puid-and-pgid) so [no need to elevate file permission on the git repository.](https://www.marcus-povey.co.uk/2013/10/03/running-gitlist-or-gitweb-with-gitolite/) Useful if you need to run gitolite on a NAS which doesn't yet directly support dockers --user option.
+## Features
+
+ * Updated to V1.0.2
+ * Fix permission problems.
+
+A host user can be mapped to the container's www server process via [environment variables](https://docs.linuxserver.io/general/understanding-puid-and-pgid) so [no need to elevate file permission on the git repository.](https://www.marcus-povey.co.uk/2013/10/03/running-gitlist-or-gitweb-with-gitolite/) Useful if you need to run gitolite on a NAS which doesn't yet directly support dockers '--user' option.
 
 Usage
 -----

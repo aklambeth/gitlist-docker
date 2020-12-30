@@ -4,8 +4,8 @@ RUN apt-get install -y software-properties-common \
  && apt-add-repository ppa:ondrej/php
 RUN apt-get update
 RUN apt-get -y install git nginx-full php7.4-fpm curl
-ADD https://s3.amazonaws.com/gitlist/gitlist-master.tar.gz /var/www/
-RUN cd /var/www; tar -zxvf gitlist-master.tar.gz
+ADD https://github.com/klaussilveira/gitlist/releases/download/1.0.2/gitlist-1.0.2.tar.gz /var/www/
+RUN cd /var/www; tar -zxvf gitlist-1.0.2.tar.gz
 RUN chmod -R 777 /var/www/gitlist
 RUN cd /var/www/gitlist/; mkdir cache; chmod 777 cache
 WORKDIR /var/www/gitlist/
