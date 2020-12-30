@@ -1,9 +1,9 @@
-![](images/horizontal.svg)
+![gitlist](images/horizontal.svg)
 
 gitlist-docker
 ==============
 
-A ready to use docker image with preinstalled nginx and gitlist.
+A ready to use docker image with preinstalled nginx and [gitlist](https://gitlist.org).
 
 You can use it to quickly expose a web interface of the git repositories in a
 directory of your host machine.
