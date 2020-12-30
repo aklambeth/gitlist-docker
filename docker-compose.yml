@@ -4,10 +4,10 @@ services:
   gitlist:
     image: gitlist-lsio
     container_name: gitlist
-    #environment:
-    #  - PUID=<user id>
-    #  - PGID=<group id>
+    environment:
+      - PUID=<user id>
+      - PGID=<group id>
     volumes:
-      - ~/repositories:/repos
+      - /path/repo:/repos
     ports:
-      - 80:80
+      - 8888:80
