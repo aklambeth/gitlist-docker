@@ -1,0 +1,34 @@
+server {
+	listen 80;
+    listen 443 ssl;
+	index index.php;
+	server_name _;
+    ssl_certificate /config/keys/cert.crt;
+	ssl_certificate_key /config/keys/cert.key;
+	client_max_body_size 0;
+	root /var/www/gitlist;
+
+	location ~ ^.+?\.php(/.*)?$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        include /etc/nginx/fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	}
+
+    location / {
+        try_files $uri @gitlist;
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+        add_header Vary "Accept-Encoding";
+        expires max;
+        try_files $uri @gitlist;
+        tcp_nodelay off;
+        tcp_nopush on;
+    }
+
+	location @gitlist {
+        rewrite ^/.*$ /index.php;
+    }
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+# create symlinks
+ln -s /config/config.ini /var/www/gitlist/config.ini
+# permissions
+mkdir /var/www/gitlist/cache
+chmod -R 700 /var/www/gitlist
+chown -R abc:abc \
+	/var/www/gitlist \
+	/config
