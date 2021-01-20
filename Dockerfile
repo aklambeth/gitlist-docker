@@ -1,6 +1,5 @@
 FROM docker.io/lsiobase/alpine.nginx
 ADD https://github.com/klaussilveira/gitlist/releases/download/1.0.2/gitlist-1.0.2.tar.gz /var/www/
-COPY ./config/config.ini /config
 RUN \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \

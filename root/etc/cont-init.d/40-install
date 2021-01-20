@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+cp -n /defaults/config.ini /config/config.ini
 # create symlinks
 ln -s /config/config.ini /var/www/gitlist/config.ini
 # permissions

@@ -49,8 +49,9 @@ Or, if you use docker-compose
         environment:
             - PUID=<user id>
             - PGID=<group id>
-        volumes:git
-            - /path/repo:/repos
+        volumes:
+            - ~/repos:/repos
+            - ./config:/config
         ports:
             - 8888:80
 
